@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npx tsc:*)",
+      "Skill(document-skills:webapp-testing)",
+      "Bash(python debug.py:*)",
+      "Bash(pip install:*)",
+      "Bash(playwright install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: PM-Dev Translator 完整实现\n\n- Worker: Hono 框架 + DeepSeek API 流式输出\n- Frontend: 纯 HTML/CSS/JS + marked.js Markdown 渲染\n- 支持 PM→Dev 和 Dev→PM 双向翻译\n- 添加部署文档和 .gitignore\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)"
+    ]
+  }
+}
