@@ -55,6 +55,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Inject API_BASE
+        run: sed -i 's|__API_BASE__|${{ vars.API_BASE }}|g' frontend/index.html
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:

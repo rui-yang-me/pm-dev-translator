@@ -1,8 +1,8 @@
-// 自动识别环境：本地开发用 localhost，生产环境用 Worker 地址
+// 自动识别环境：本地开发用 localhost，生产环境从 window.API_BASE 读取
 const API_BASE =
   window.location.hostname === "localhost"
     ? "http://localhost:8787"
-    : "https://drivedirect.eu.org";
+    : window.API_BASE;
 
 // 配置 marked
 marked.setOptions({
