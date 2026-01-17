@@ -1,8 +1,9 @@
 // 自动识别环境：本地开发用 localhost，生产环境从 window.API_BASE 读取
-const API_BASE =
-  window.location.hostname === "localhost"
-    ? "http://localhost:8787"
-    : window.API_BASE;
+const isLocal =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1" ||
+  window.location.protocol === "file:";
+const API_BASE = isLocal ? "http://localhost:8787" : window.API_BASE;
 
 // 配置 marked
 marked.setOptions({
