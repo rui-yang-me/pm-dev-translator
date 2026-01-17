@@ -2,7 +2,10 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#f8fafc">
   <title>PM-Dev Translator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,21 +33,25 @@
       <div class="panel input-panel">
         <div class="panel-header">
           <h2 class="input-title">产品需求</h2>
+          <span class="header-spacer"></span>
         </div>
         <textarea
           id="input-text"
           placeholder="请输入产品需求描述..."
         ></textarea>
-        <button id="translate-btn" class="translate-btn">
-          <span class="btn-text">翻译</span>
-          <span class="btn-loading" style="display: none;">翻译中...</span>
-        </button>
+        <div class="btn-group">
+          <button id="translate-btn" class="translate-btn">
+            <span class="btn-text">翻译</span>
+            <span class="btn-loading" style="display: none;">翻译中...</span>
+          </button>
+          <button id="reset-btn" class="reset-btn">清空</button>
+        </div>
       </div>
 
       <div class="panel output-panel">
         <div class="panel-header">
           <h2 class="output-title">技术方案</h2>
-          <button id="copy-btn" class="copy-btn" style="display: none;">复制</button>
+          <button id="copy-btn" class="copy-btn" style="visibility: hidden;">复制</button>
         </div>
         <div id="output-text" class="output-content">
           <p class="placeholder">翻译结果将显示在这里...</p>
