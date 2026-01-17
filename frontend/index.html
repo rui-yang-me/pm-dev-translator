@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM-Dev Translator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PM-Dev Translator</h1>
+      <p class="subtitle">产品经理与开发工程师的沟通桥梁</p>
+    </header>
+
+    <div class="direction-toggle">
+      <button class="toggle-btn active" data-direction="pm-to-dev">
+        <span class="role">PM</span>
+        <span class="arrow">→</span>
+        <span class="role">Dev</span>
+      </button>
+      <button class="toggle-btn" data-direction="dev-to-pm">
+        <span class="role">Dev</span>
+        <span class="arrow">→</span>
+        <span class="role">PM</span>
+      </button>
+    </div>
+
+    <main class="content">
+      <div class="panel input-panel">
+        <div class="panel-header">
+          <h2 class="input-title">产品需求</h2>
+        </div>
+        <textarea
+          id="input-text"
+          placeholder="请输入产品需求描述..."
+        ></textarea>
+        <button id="translate-btn" class="translate-btn">
+          <span class="btn-text">翻译</span>
+          <span class="btn-loading" style="display: none;">翻译中...</span>
+        </button>
+      </div>
+
+      <div class="panel output-panel">
+        <div class="panel-header">
+          <h2 class="output-title">技术方案</h2>
+          <button id="copy-btn" class="copy-btn" style="display: none;">复制</button>
+        </div>
+        <div id="output-text" class="output-content">
+          <p class="placeholder">翻译结果将显示在这里...</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Powered by DeepSeek AI</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
