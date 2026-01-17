@@ -64,6 +64,7 @@ function updateDirection(direction) {
 function setLoading(loading) {
   state.isLoading = loading;
   elements.translateBtn.disabled = loading;
+  elements.resetBtn.disabled = loading;
   elements.btnText.style.display = loading ? "none" : "inline";
   elements.btnLoading.style.display = loading ? "inline" : "none";
 }
