@@ -1,5 +1,46 @@
 # PM-Dev Translator 部署文档
 
+## GitHub Actions 自动部署 (推荐)
+
+### 1. 配置 GitHub Secrets
+
+在 GitHub 仓库 **Settings > Secrets and variables > Actions** 中添加以下 Secrets：
+
+| Secret 名称 | 说明 | 获取方式 |
+| --- | --- | --- |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare API Token | [创建 Token](https://dash.cloudflare.com/profile/api-tokens)，权限选择 "Edit Cloudflare Workers" |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare 账户 ID | Dashboard 右侧栏或 URL 中获取 |
+| `DEEPSEEK_API_KEY` | DeepSeek API Key | [DeepSeek 控制台](https://platform.deepseek.com/) |
+
+### 2. 创建 Cloudflare API Token
+
+1. 访问 [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+2. 点击 **Create Token**
+3. 选择 **Create Custom Token**
+4. 配置权限：
+   - **Account > Cloudflare Pages** - Edit
+   - **Account > Cloudflare Workers Scripts** - Edit
+   - **Account > Account Settings** - Read
+   - **Zone > Zone** - Read (如需绑定自定义域名)
+5. 创建并复制 Token
+
+### 3. 触发部署
+
+- **自动触发**：推送到 `main` 分支
+- **手动触发**：GitHub Actions 页面点击 "Run workflow"
+
+### 4. 首次部署注意
+
+首次部署 Pages 前，需要先在 Cloudflare Dashboard 创建 Pages 项目：
+1. 进入 **Workers & Pages > Create application > Pages**
+2. 选择 **Direct Upload**
+3. 项目名称填写 `pm-dev-translator`
+4. 上传任意文件完成创建（后续由 GitHub Actions 覆盖）
+
+---
+
+## 手动部署
+
 ## 项目结构
 
 ```

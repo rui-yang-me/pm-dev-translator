@@ -1,4 +1,7 @@
-const API_BASE = 'http://localhost:8787';
+// 自动识别环境：本地开发用 localhost，生产环境用 Worker 地址
+const API_BASE = window.location.hostname === 'localhost'
+  ? 'http://localhost:8787'
+  : 'https://pm-dev-translator.yanghouguang.workers.dev';
 
 const state = {
   direction: 'pm-to-dev',
